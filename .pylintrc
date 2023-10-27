@@ -2,3 +2,4 @@
 disable=
     C0103, # uppercase naming style
     W0603, # global statement
+    E266, #too many hashes
