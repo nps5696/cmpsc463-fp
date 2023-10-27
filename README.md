@@ -9,4 +9,8 @@
 - Add Unit Tests
 - Run Performance Analysis
 
+## Quicksort and Introspective Sort Prformance Comparison
 
+Quicksort has big disadvancage for the cases where it is picking left most or right most element, redurcing its complexity to O(n^2). Intospective sorting algorithm utilizes heapsort for the cases such this. Let's look at the sorting time performance graph:
+
+![introsort vs quicksort run time](https://github.com/nps5696/cmpsc463-fp/blob/develop/img/intospective_vs_quicksort.png)
