@@ -22,3 +22,7 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint  --fail-under=8 $(git ls-files '*.py')
+    - uses: Silleellie/pylint-github-action@v1
+      with:
+        package-path: src
+        python-version: 3.11
