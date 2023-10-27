@@ -1,5 +1,5 @@
 # Introsort Algorithm, CMPSC-463 Final Project
-![pylint]() or [![pylint]()](https://redirect/link)
+![pylint](https://img.shields.io/badge/pylint-9.04-yellow?logo=python&logoColor=whitehttps://img.shields.io/badge/pylint-9.04-yellow?logo=python&logoColor=whitehttps://img.shields.io/badge/pylint-9.04-yellow?logo=python&logoColor=whitehttps://img.shields.io/badge/pylint-9.04-yellow?logo=python&logoColor=white)
 ## Implementing hybrid sorting algorithms
 ### 
  For this project I am going to implement Introsort algorithm. The algorithm relies on Quicksort and Heapsort. 
