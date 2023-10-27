@@ -37,7 +37,7 @@ Quicksort has a big disadvantage for the cases where it is picking the left-most
 
 ![introsort vs quicksort run time](https://github.com/nps5696/cmpsc463-fp/blob/develop/img/intospective_vs_quicksort.png)
 
-On the graph you can see real-world performance on test data, the performance was generated from running Introsort and Quicksort Algorithms with a list length of 1000 of unsorted integers. The complexity is clearly visible, **as we increase the size of our array the Quicksort algorithm trend shows quadratic growth, while Itrosort shows logarithm based growth function.**
+On the graph you can see real-world performance on test data, the performance was generated from running Introsort and Quicksort Algorithms with a list length of 1000 of unsorted integers. The complexity is clearly visible, **as we increase the size of our array the Quicksort algorithm trend shows quadratic growth, while Introsort shows logarithm based growth function.**
 
 ### Introspective hybrid sorting performance compared to Quicksort and Heapsort
 
