@@ -93,10 +93,13 @@ def partition(array, start, end):
 
     while True:
         while low <= high and array[high] >= pivot:
+            # current element larger pivot reduce current index by one, continue until False
             high -= 1
         while low <= high and array[low] <= pivot:
+            # current element lower than pivot increase current index by one, continue until False
             low += 1
         if low <= high:
+            # loops above were interrupted -> swap elements
             array[low], array[high] = array[high], array[low]
         else:
             break
@@ -126,16 +129,6 @@ def extract_smallest(arr_e):
     return smallest_val, arr_e
 
 
-# def heapsort(arr_l):
-#     heap = ['' for _ in arr_l]
-#     n = len(heap)
-#     for i in range(0, n):
-#         # print(i)
-#         print("arr:", arr_l)
-#         heap[i], arr_l = extract_smallest(arr)
-#
-#     return heap
-
 def func_perform_graphics(data, data_qs):
     # Unpack the tuple pairs into two lists: x values and y values
     x_values, y_values = zip(*data)
@@ -152,19 +145,16 @@ def func_perform_graphics(data, data_qs):
     plt.grid(True)
     plt.show()
 
-# arr = [4, 10, 3, 7, 4, 6] #[12, 11, 13, 5, 6, 7]
 
-# 11, 12, 13, 5, , 6, 7
-# 11, 12, 13 ..
-# 11, 5, 13, 12, ..
-# 11, 5, 13, 6, 12, 7
-# 11, 5, 13
+####### PERFORMANCE TEST AREA BELOW #######
 
-# print(heapsort(arr))
+########## ######  ######  #########
+    ###    #       #         ###
+    ###    ####      #       ###
+    ###    #           #     ###
+    ###    ###### #####      ###
 
-# print(extract_smallest(arr))
-
-# print(partition(arr, 0,5))
+###########################################
 
 
 def get_list_nums():
@@ -179,24 +169,33 @@ qs_heap_used_counter = 0
 num_runs = 100
 # test run time
 for i in range(num_runs):
+    # generate random list of integers
     rand_arr = get_list_nums()
+
+    # measure run time
     start_time = time.time()
+    # run introsort with its will capabilities
     introsort(rand_arr)
     end_time = time.time()
 
-    if heap_used is True:
-        heap_used_counter += 1
-    heap_used = False
+    # sorted array output, commented out for better usability
+    # print(rand_arr)
 
+    # if heap_used is True:
+    #     heap_used_counter += 1
+    # heap_used = False
+
+    # seting this to force usage of quicksort only!!!
     quicksort = True
     qs_start_time = time.time()
+    # run introsort function with QUICKSORT only !!! IMPORTANT !!!
     introsort(rand_arr)  # actually runs quicksort
     qs_end_time = time.time()
 
     # if heap_used == True:
     #     qs_heap_used_counter += 1
     # heap_used = False
-
+    #
     # exec time
     time_delta = end_time - start_time
     qs_time_delta = qs_end_time - qs_start_time
@@ -205,7 +204,7 @@ for i in range(num_runs):
 
 print("performance:", sorted(func_performance, key=lambda x: x[1], reverse=True))
 print("performance:", sorted(qs_func_performance, key=lambda x: x[1], reverse=True))
-print("heap_used_counter:", heap_used_counter/num_runs)
-print("qs_heap_used_counter:", qs_heap_used_counter/num_runs)
+# print("heap_used_counter:", heap_used_counter/num_runs)
+# print("qs_heap_used_counter:", qs_heap_used_counter/num_runs)
 
 func_perform_graphics(func_performance, qs_func_performance)
