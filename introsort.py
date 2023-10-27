@@ -4,10 +4,11 @@
 # CMPSC 463
 ####
 
+import sys
 import random
 import time
 import matplotlib.pyplot as plt
-import sys
+
 
 # need for quicksort testing with deep recursion
 sys.setrecursionlimit(50000)
@@ -31,7 +32,7 @@ def introsort_router(arr, start, end, depth):
     if end - start <= 1:
         return
     # if depth is 0 quicksort is no longer quick->(O(n^2)), switching to heapsort
-    elif depth == 0 and quicksort is False:
+    if depth == 0 and quicksort is False:
         global heap_used
         heap_used = True
         do_heapsort(arr, start, end)
@@ -113,7 +114,7 @@ def extract_smallest(arr_e):
     print("arr_e:", arr_e)
     smallest = ()
     for i_es in range(len(arr_e)):
-        if smallest == ():
+        if not smallest:
             smallest = (i_es, arr_e[i_es])
 
         if smallest[1] > arr_e[i_es]:
