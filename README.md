@@ -1,5 +1,5 @@
 # Introsort Algorithm, CMPSC-463 Project 1
-![pylint](https://img.shields.io/badge/pylint-8.99-yellow?logo=python&logoColor=white)
+![pylint](https://img.shields.io/badge/pylint-8.91-yellow?logo=python&logoColor=white)
 
 ---
 
