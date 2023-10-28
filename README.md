@@ -46,3 +46,17 @@ Why not use Quicksort alone? Quicksort has worst-case complexity O(n^2) for the 
 Why not use Heapsort alone? Heapsort tends to perform worse compared to Quicksort for smaller arrays because it utilizes local cache, and parallelization better, Quicksort also has a simpler data structure to work with - arrays vs max heap in Heapsort. Heapsort has to work with a more complex structure - heap which adds overhead to its run time. 
 
 Overall we get the best from both algorithms when exploiting their strengths. We get faster sorting for smaller arrays using Quicksort, which gives us the complexity of O(n log n). And for the larger arrays we switch to Heapsort to avoid O(n^2) complexity from Quicksort, the switch to Heapsort keeps the complexity for larger arrays at O(n log n) time. Therefore, we have the complexity of O(n log n) for any case.
+
+### For my test case with 100 arrays varying length of 10 to 1000 items, I recieved thise performance results:
+
+```
+Average performance for 100 runs printout: 
+Average running time of Introsort for 100 sets: 0.0009717774391174316
+Average running time of Quicksort for 100 sets: 0.006901700496673584
+
+
+Performance gain for our test case: 
+Average performance gain of Introsort vs Quicksort for 100 tests: 7.102141106446873
+```
+
+The performance is heavily dependent on test cases, and will change in accordance with complexities of the Introsort and Quicksort I mentioned in this document above.

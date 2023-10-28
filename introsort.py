@@ -73,7 +73,7 @@ def do_max_heapify(arr, index, start, end):
     lt = left(index)
     rt = right(index)
 
-    if lt < size and arr[start + 1] > arr[start + index]:
+    if lt < size and arr[start + lt] > arr[start + index]:
         largest = lt
     else:
         largest = index
@@ -185,7 +185,7 @@ for i in range(num_runs):
     #     heap_used_counter += 1
     # heap_used = False
 
-    # seting this to force usage of quicksort only!!!
+    # setting this to force usage of quicksort only!!!
     quicksort = True
     qs_start_time = time.time()
     # run introsort function with QUICKSORT only !!! IMPORTANT !!!
@@ -202,8 +202,20 @@ for i in range(num_runs):
     func_performance.append((len(rand_arr), time_delta))
     qs_func_performance.append((len(rand_arr), qs_time_delta))
 
-print("performance:", sorted(func_performance, key=lambda x: x[1], reverse=True))
-print("performance:", sorted(qs_func_performance, key=lambda x: x[1], reverse=True))
+print("Complete performance printout: ")
+print("Introsort performance:", sorted(func_performance, key=lambda x: x[1], reverse=True))
+print("Quicksort performance:", sorted(qs_func_performance, key=lambda x: x[1], reverse=True))
+print("\n")
+
+into_runtime = sum([t[1] for t in func_performance]) / len(func_performance)
+qc_runtime = sum([t[1] for t in qs_func_performance]) / len(qs_func_performance)
+
+print("Average performance for 100 runs printout: ")
+print("Average running time of Introsort for 100 sets:", into_runtime)
+print("Average running time of Quicksort for 100 sets:", qc_runtime)
+print("\n")
+print("Performance gain for our test case: ")
+print("Average performance gain of Introsort vs Quicksort for 100 tests:", qc_runtime/into_runtime)
 # print("heap_used_counter:", heap_used_counter/num_runs)
 # print("qs_heap_used_counter:", qs_heap_used_counter/num_runs)
 
